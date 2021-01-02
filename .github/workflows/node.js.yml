@@ -19,7 +19,7 @@ jobs:
           name: webpack artifacts
           path: public/
       - name: npm install and build webpack
-    needs: build
+        run: |
           npm install
           npm run build
       - uses: actions/upload-artifact@main
@@ -46,3 +46,4 @@ jobs:
           npm test
         env:
           CI: true
+    needs: build
